@@ -138,9 +138,7 @@ These failures indicate that the email was not sent from an authorized PayPal ma
 
 ### 3. Suspicious Link Identification
 
-The email contained the following verification link:
-
-http://paypal-secure-login.ru/verify
+The email contained verification link:
 
 **Findings:**
 
