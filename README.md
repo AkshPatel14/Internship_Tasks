@@ -262,3 +262,110 @@ These ratings help prioritize remediation efforts.
 ## Outcome
 
 Successfully performed a vulnerability scan using Nessus Essentials, analyzed the results, understood vulnerability severity ratings, and learned basic vulnerability management practices.
+
+Task 4: Setup and Use a Firewall on Linux Using UFW
+Objective
+
+The objective of this task is to configure and test basic firewall rules using UFW (Uncomplicated Firewall) on Ubuntu Linux. The task demonstrates how to allow and block network traffic, verify firewall functionality, and understand how firewalls improve system security.
+
+Tools Used
+Ubuntu Linux
+UFW (Uncomplicated Firewall)
+Telnet (for testing blocked ports)
+Terminal
+Task Overview
+Step 1: Check Firewall Status
+
+Verified the current status of the UFW firewall.
+
+sudo ufw status verbose
+Step 2: Enable UFW Firewall
+
+Activated the firewall service.
+
+sudo ufw enable
+
+Verified status:
+
+sudo ufw status numbered
+Step 3: Block Inbound Traffic on Port 23 (Telnet)
+
+Created a firewall rule to deny incoming Telnet connections.
+
+sudo ufw deny 23/tcp
+
+Reloaded and verified the rule:
+
+sudo ufw reload
+sudo ufw status
+Step 4: Test the Firewall Rule
+
+Attempted to connect to port 23 using Telnet.
+
+telnet localhost 23
+
+Result:
+
+Unable to connect to remote host: Connection refused
+
+This confirmed that the firewall successfully blocked Telnet traffic.
+
+Step 5: Allow SSH Traffic (Port 22)
+
+Configured the firewall to allow SSH connections.
+
+sudo ufw allow 22/tcp
+
+Verified the rule:
+
+sudo ufw status
+Step 6: Remove Test Block Rule
+
+Removed the temporary Telnet blocking rule to restore the original configuration.
+
+sudo ufw status numbered
+sudo ufw delete <rule_number>
+
+Example:
+
+sudo ufw delete 2
+sudo ufw delete 3
+How Firewall Filters Traffic
+
+A firewall acts as a security gatekeeper between a system and the network. Every incoming or outgoing packet is checked against configured rules.
+
+Traffic Filtering Process
+Packet Arrives
+       ↓
+Check Rules (Top to Bottom)
+       ↓
+First Matching Rule Found
+       ↓
+Allow / Deny / Reject
+       ↓
+No Match → Apply Default Policy
+
+Rule Components
+Direction (Inbound / Outbound)
+Protocol (TCP / UDP / ICMP)
+Port Number
+Source Address
+Destination Address
+Action (Allow / Deny / Reject)
+
+Security Benefits
+Prevents unauthorized access.
+Blocks insecure services such as Telnet.
+Reduces attack surface by closing unnecessary ports.
+Controls inbound and outbound traffic.
+Provides an additional layer of security.
+
+Results
+UFW firewall was successfully enabled.
+Inbound Telnet traffic on port 23 was blocked.
+SSH access on port 22 was allowed.
+Firewall rules were verified and tested successfully.
+Temporary test rules were removed after validation.
+Conclusion
+
+This task demonstrated the practical implementation of firewall security using UFW on Ubuntu Linux. By creating, testing, and removing firewall rules, the functionality of packet filtering and access control was verified. Firewalls are a critical component of network security and help protect systems from unauthorized access and malicious traffic.
