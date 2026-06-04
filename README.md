@@ -203,3 +203,62 @@ The analyzed email exhibits multiple characteristics of a phishing attack. By ex
 * Recognition of malicious URLs
 * Awareness of social engineering tactics
 * Improved email security analysis skills
+* 
+# Task 3 - Basic Vulnerability Scan Using Nessus Essentials
+
+## Objective
+The objective of this task was to perform a basic vulnerability assessment on a local machine using Nessus Essentials and identify potential security risks, vulnerabilities, and recommended mitigations.
+
+## Tool Used
+- Nessus Essentials
+- Ubuntu Linux
+- Web Browser (for Nessus interface)
+
+## Scan Configuration
+
+### Target
+- Local Machine (localhost / local IP address)
+
+### Scan Type
+- Basic Network Scan
+
+### Vulnerability Scanner
+- Nessus Essentials
+
+## Procedure
+
+1. Installed Nessus Essentials on Ubuntu.
+2. Started the Nessus service.
+3. Accessed the Nessus web interface through the browser.
+4. Created a new scan policy using Basic Network Scan.
+5. Configured the target as the local machine.
+6. Launched the vulnerability scan.
+7. Waited for the scan to complete.
+8. Reviewed identified vulnerabilities and their severity levels.
+9. Documented findings and recommended mitigations.
+10. Captured screenshots of scan results.
+
+## Vulnerability Severity Levels
+
+Nessus categorizes vulnerabilities into:
+
+- Critical
+- High
+- Medium
+- Low
+- Informational
+
+These ratings help prioritize remediation efforts.
+
+## Key Concepts Learned
+
+- Vulnerability Scanning
+- Risk Assessment
+- CVSS (Common Vulnerability Scoring System)
+- Vulnerability Management
+- Security Hardening
+- Remediation Planning
+
+## Outcome
+
+Successfully performed a vulnerability scan using Nessus Essentials, analyzed the results, understood vulnerability severity ratings, and learned basic vulnerability management practices.
