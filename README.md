@@ -369,3 +369,47 @@ Temporary test rules were removed after validation.
 
 ## Conclusion
 This task demonstrated the practical implementation of firewall security using UFW on Ubuntu Linux. By creating, testing, and removing firewall rules, the functionality of packet filtering and access control was verified. Firewalls are a critical component of network security and help protect systems from unauthorized access and malicious traffic.
+
+# Task 5 - Capture and Analyze Network Traffic Using Wireshark
+
+## Objective
+Capture live network packets on Kali Linux using Wireshark, generate traffic using standard tools, and analyze captured packets to identify protocols and traffic types.
+
+## Tools Used
+- **Wireshark** – Packet capture and analysis
+- **Kali Linux** – Operating system (VirtualBox)
+- **Interface** – eth0
+- **Traffic Generators** – ping, curl, nslookup
+
+## Steps Performed
+
+1. Opened Wireshark and started live capture on `eth0`
+2. Generated traffic using:
+```bash
+   ping -c 10 8.8.8.8
+   curl http://example.com
+   nslookup google.com
+```
+3. Stopped capture after traffic generation (180 packets total)
+4. Applied display filters: `http`, `dns`, `tcp`, `icmp`
+5. Analyzed packets for each protocol
+6. Exported capture as `.pcap` file
+
+## Protocols Identified
+
+| Protocol | Port/Type | Packets | Observation |
+|----------|-----------|---------|-------------|
+| HTTP | TCP Port 80 | 2 (1.1%) | GET request to example.com, 200 OK response |
+| DNS | UDP Port 53 | 8 (4.4%) | A/AAAA queries for example.com and google.com |
+| TCP | Port 51056→80 | 14 (7.8%) | Full 3-way handshake (SYN, SYN-ACK, ACK) + FIN teardown |
+| ICMP | Type 8/0 | 20 (11.1%) | 10 ping requests + 10 replies to 8.8.8.8, TTL=117 |
+
+## Key Findings
+
+- **HTTP** – Unencrypted traffic; method, host, and response fully visible in plaintext
+- **DNS** – Every connection triggers a DNS lookup before data flows; runs unencrypted by default
+- **TCP** – Three-way handshake clearly captured; reliable delivery confirmed via ACK flags
+- **ICMP** – 0% packet loss on all 10 pings; TTL=117 indicates ~7 network hops to 8.8.8.8
+
+## Files
+- `task5.docx` – Detailed analysis report with screenshots
