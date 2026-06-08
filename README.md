@@ -413,3 +413,72 @@ Capture live network packets on Kali Linux using Wireshark, generate traffic usi
 
 ## Files
 - `task5.docx` – Detailed analysis report with screenshots
+
+# Task 6 - Password Strength Evaluation
+
+## Objective
+Understand what makes a password strong by creating passwords with varying complexity and testing them using an online password strength checker.
+
+---
+
+## Tool Used
+- **Bitwarden Password Strength Tester** — https://bitwarden.com/password-strength/
+
+---
+
+## Passwords Tested
+
+| Password | Strength | Crack Time | Character Types |
+|----------|----------|------------|-----------------|
+| `1234567890` | 🔴 Very Weak | Less Than A Second | Digits only |
+| `Bddfgs@1235` | 🟢 Good | 1 Month | Upper + Lower + Digits + Symbol |
+| `Ahkgjjhv@1432676` | 🔵 Strong | Centuries | Upper + Lower + Digits + Symbol |
+
+---
+
+## Key Observations
+
+- **Length** is the single biggest factor in password strength
+- Adding **uppercase + symbols** jumps crack time from seconds → months
+- 16-char mixed password = centuries to crack vs <1 second for numeric-only
+- Sequential/numeric passwords (`1234567890`) appear in every wordlist — cracked instantly
+
+---
+
+## Common Password Attacks
+
+**Brute Force** — tries every character combination; defeated by long passwords  
+**Dictionary Attack** — uses wordlists of common passwords; defeated by random non-word strings  
+**Credential Stuffing** — reuses leaked credentials; defeated by unique password per account  
+
+---
+
+## Best Practices Learned
+
+- Use **minimum 12–16 characters**
+- Mix **uppercase, lowercase, numbers, special characters**
+- Avoid sequential patterns (`1234`, `abcd`, `qwerty`)
+- Avoid personal info (name, DOB, phone)
+- **Unique password** for every account
+- Use a **password manager** (Bitwarden, KeePass)
+- Enable **MFA/2FA** wherever available
+- Passphrases work well: `Horse-Lamp-River-42!`
+
+---
+
+## Screenshots
+
+**Password 1 — Very Weak (`1234567890`)**  
+![Very Weak](screenshots/6_1.png)
+
+**Password 2 — Good (`Bddfgs@1235`)**  
+![Good](screenshots/6_2.png)
+
+**Password 3 — Strong (`Ahkgjjhv@1432676`)**  
+![Strong](screenshots/6_3.png)
+
+---
+
+## Conclusion
+
+Password complexity directly determines resistance to attack. A numeric-only password is cracked in under a second. A 16-char mixed-type password would take centuries. Length + character diversity = strong password. Use a password manager to generate and store them.
