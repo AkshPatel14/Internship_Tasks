@@ -469,13 +469,13 @@ Understand what makes a password strong by creating passwords with varying compl
 ## Screenshots
 
 **Password 1 — Very Weak (`1234567890`)**  
-![Very Weak](screenshots/6_1.png)
+![Very Weak]
 
 **Password 2 — Good (`Bddfgs@1235`)**  
-![Good](screenshots/6_2.png)
+![Good]
 
 **Password 3 — Strong (`Ahkgjjhv@1432676`)**  
-![Strong](screenshots/6_3.png)
+![Strong]
 
 ---
 
